@@ -16,9 +16,13 @@ public class Main {
     }
 
     private static void mostrarCarrito(int[] arreglo) {
+        int aux = 0;
         for (int i = 0; i < arreglo.length; i++) {
+            aux+= arreglo[i];
             System.out.println("["+i+"] "+arreglo[i]+" ");
+
         }
+        System.out.println("El carrito contiene "+aux+" Productos");
     }
 
     private static int[] llenarCarrito(int[] arreglo) {
