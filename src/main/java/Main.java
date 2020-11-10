@@ -9,41 +9,55 @@ public class Main {
     public static void main(String[] args) {
 
         int largo = rNum.nextInt(21);
-        int[] arreglo = new int[largo];
+        int[] carrito = new int[largo];
+        int total;
 
-        llenarCarrito(arreglo);
-        mostrarCarrito(arreglo);
-        detalleCarrito(arreglo);
+        llenarCarrito(carrito);
+        mostrarCarrito(carrito);
+        total = totalCompra(carrito);
+
+        detalleCarrito(carrito, total);
     }
 
-    private static void detalleCarrito(int[] arreglo) {
+    private static int totalCompra(int[] carrito) {
+        int total =0;
         int precio = 500;
-        int cantidad;
-        for (int i = 0; i < arreglo.length; i++) {
-            cantidad = arreglo[i];
-            System.out.println("Producto  ["+i+"]   Cantidad:   "+cantidad+"    Subtotal: "+cantidad*precio);
+        for (int i = 0; i < carrito.length; i++) {
+            total+=carrito[i]*precio;
             precio+=150;
         }
+        return total;
     }
 
-    private static void mostrarCarrito(int[] arreglo) {
+    private static void detalleCarrito(int[] carrito, int total) {
+            int precio = 500;
+        for (int i = 0; i < carrito.length; i++) {
+
+            System.out.println("Producto  ["+i+"]   Cantidad:   "+carrito[i]+"    Subtotal: $"+carrito[i]*precio);
+            precio+=150;
+
+        }
+        System.out.println("Total de la compra: $"+total);
+    }
+
+    private static void mostrarCarrito(int[] carrito) {
         int aux = 0;
-        for (int i = 0; i < arreglo.length; i++) {
-            aux+= arreglo[i];
-            System.out.println("["+i+"] "+arreglo[i]+" ");
+        for (int i = 0; i < carrito.length; i++) {
+            aux+= carrito[i];
+            System.out.println("["+i+"] "+carrito[i]+" ");
 
         }
-        System.out.println("El carrito contiene "+aux+" Productos");
+        System.out.println("\nEl carrito contiene "+aux+" Productos\n");
     }
 
-    private static int[] llenarCarrito(int[] arreglo) {
+    private static int[] llenarCarrito(int[] carrito) {
         int nProductos;
-        for (int i = 0; i < arreglo.length; i++) {
+        for (int i = 0; i < carrito.length; i++) {
             nProductos = rNum.nextInt(16);
-            arreglo[i] = nProductos;
+            carrito[i] = nProductos;
 
         }
-        return arreglo;
+        return carrito;
     }
 
 }
