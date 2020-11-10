@@ -20,34 +20,34 @@ public class Main {
     }
 
     private static int totalCompra(int[] carrito) {
-        int total =0;
+        int total = 0;
         int precio = 500;
         for (int i = 0; i < carrito.length; i++) {
-            total+=carrito[i]*precio;
-            precio+=150;
+            total += carrito[i] * precio;
+            precio += 150;
         }
         return total;
     }
 
     private static void detalleCarrito(int[] carrito, int total) {
-            int precio = 500;
+        int precio = 500;
         for (int i = 0; i < carrito.length; i++) {
 
-            System.out.println("Producto  ["+i+"]   Cantidad:   "+carrito[i]+"    Subtotal: $"+carrito[i]*precio);
-            precio+=150;
+            System.out.println("Producto  [" + i + "]   Cantidad:   " + carrito[i] + "    Subtotal: $" + carrito[i] * precio);
+            precio += 150;
 
         }
-        System.out.println("Total de la compra: $"+total);
+        System.out.println("Total de la compra: $" + total);
     }
 
     private static void mostrarCarrito(int[] carrito) {
         int aux = 0;
         for (int i = 0; i < carrito.length; i++) {
-            aux+= carrito[i];
-            System.out.println("["+i+"] "+carrito[i]+" ");
+            aux += carrito[i];
+            System.out.println("[" + i + "] " + carrito[i] + " ");
 
         }
-        System.out.println("\nEl carrito contiene "+aux+" Productos\n");
+        System.out.println("\nEl carrito contiene " + aux + " Productos\n");
     }
 
     private static int[] llenarCarrito(int[] carrito) {
