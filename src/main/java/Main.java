@@ -13,6 +13,17 @@ public class Main {
 
         llenarCarrito(arreglo);
         mostrarCarrito(arreglo);
+        detalleCarrito(arreglo);
+    }
+
+    private static void detalleCarrito(int[] arreglo) {
+        int precio = 500;
+        int cantidad;
+        for (int i = 0; i < arreglo.length; i++) {
+            cantidad = arreglo[i];
+            System.out.println("Producto  ["+i+"]   Cantidad:   "+cantidad+"    Subtotal: "+cantidad*precio);
+            precio+=150;
+        }
     }
 
     private static void mostrarCarrito(int[] arreglo) {
